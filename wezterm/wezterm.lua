@@ -20,7 +20,7 @@ end
 local host_os = get_os()
 
 -- Color Configuration
-config.colors = require("cyberdream")
+config.colors = wezterm.color.get_builtin_schemes()["Catppuccin Latte"]
 config.force_reverse_video_cursor = true
 
 -- Font configuration
@@ -38,7 +38,6 @@ config.initial_rows = 35
 config.initial_cols = 180
 config.window_decorations = "RESIZE"
 config.window_background_opacity = opacity
-config.window_background_image = (os.getenv("WEZTERM_CONFIG_FILE") or ""):gsub("wezterm.lua", "bg-blurred.png")
 config.window_close_confirmation = "NeverPrompt"
 config.win32_system_backdrop = "Acrylic"
 

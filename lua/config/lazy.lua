@@ -21,6 +21,21 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+-- Dev setup utils
+P = function(v)
+    print(vim.inspect(v))
+    return v
+end
+
+RELOAD = function(...)
+    return require("plenary.reload").reload_module(...)
+end
+
+R = function(name)
+    RELOAD(name)
+    return require(name)
+end
+
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {

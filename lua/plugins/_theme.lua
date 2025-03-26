@@ -1,24 +1,15 @@
 return {
-    "scottmckendry/cyberdream.nvim",
+    "catppuccin/nvim",
+    name = "catppuccin",
     lazy = false,
     priority = 1000,
     config = function()
-        require("cyberdream").setup({
-            variant = "auto",
-            transparent = true,
-            italic_comments = true,
-            hide_fillchars = true,
-            terminal_colors = false,
-            cache = true,
-            borderless_pickers = true,
-            overrides = function(c)
-                return {
-                    CursorLine = { bg = c.bg },
-                    CursorLineNr = { fg = c.magenta },
-                }
-            end,
+        require("catppuccin").setup({
+            flavour = "latte",
+            transparent_background = true,
         })
-
-        vim.cmd("colorscheme cyberdream")
-    end,
+        
+        vim.cmd("colorscheme catppuccin")
+    end
 }
+
