@@ -1,5 +1,6 @@
 return {
     "nvim-treesitter/nvim-treesitter",
+    lazy = false,
     build = ":TSUpdate",
     event = {"BufReadPre", "BufNewFile"},
     config = function()
@@ -18,17 +19,21 @@ return {
             ensure_installed = {
                 "lua",
                 "rust",
-                "toml"
+                "toml",
+                "svelte",
+                "go",
             },
             incremental_selection = {
                 enable = true,
                 keymaps = {
                     init_selection = "<C-space>",
                     node_incremental = "<C-space>",
-                    scope_incremental = true,
+                    scope_incremental = "<S-v>",
                     node_decremental = "<bs>",
                 }
             }
         })
+
+        print("treesitter config loaded")
     end
 }
